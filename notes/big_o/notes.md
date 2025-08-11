@@ -38,6 +38,7 @@ end
 
 It is still O(n)! 
 > Important concept: Constants are dropped
+> Important concept: Big O tends to focus on worst case scenarios
 
 In the example above, the alghorithm complexity is O(2n), but in big O notation we always drop constants.
 That is because Big O described the upper bound of the alghorithm. Constant growth eventually becomes irrelevant.
@@ -48,3 +49,44 @@ N = 5, O(10N) = 50, O(N^2) = 25
 N = 100, O(10N) = 1,000, O(N^2) = 10,000 # 10x bigger
 N = 1000, O(10N) = 10,000, O(N^2) = 1,000,000 # 100x bigger
 N = 10000, O(10N) = 100,000, O(N^2) = 100,000,000 # 1000x bigger
+
+### O(n^2)
+
+```rb
+def sum_char_codes(n)
+  sum = 0
+
+  (0..(n.length - 1)).each do |i|
+    (0..(n.length - 1)).each do |j|
+      sum += n[i].ord
+    end
+  end
+
+  sum
+end
+```
+
+### O(n^3)
+
+```rb
+def sum_char_codes(n)
+  sum = 0
+
+  (0..(n.length - 1)).each do |i|
+    (0..(n.length - 1)).each do |j|
+      (0..(n.length - 1)).each do |k|
+        sum += n[i].ord
+      end
+    end
+  end
+
+  sum
+end
+```
+
+### O(n log n)
+An example is Quicksort alghorithm
+
+### O(log n)
+An example is Binary Search Trees
+

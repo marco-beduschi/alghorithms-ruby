@@ -10,5 +10,4 @@ def sum_char_codes(n)
   sum
 end
 
-
 puts sum_char_codes('This is a very long string')
